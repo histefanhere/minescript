@@ -5,10 +5,11 @@ code = ""
 def interpret_line_for_comments(line):
     global code
     mode = "code"
+    i = 0
     for char in line:
         if char == "\"":
             if mode == "code":
-                mode == "text"
+                mode = "text"
             else:
                 mode = "code"
             code += char
@@ -16,9 +17,11 @@ def interpret_line_for_comments(line):
             if mode == "text":
                 code += char
             else:
-                if char == "#" or char == " ":
+                if char == "#":
+                    code += "\n" if i != 0 else ""
                     return
                 code += char
+        i += 1
 
 for line in file:
     interpret_line_for_comments(line)
