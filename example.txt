@@ -1,0 +1,3 @@
+say hi
+# this is a comment
+This is not commented # But this is!
