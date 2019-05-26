@@ -1,0 +1,4 @@
+i = 0;
+if (i > 2) {
+	execute as @e[type=minecraft:horse] run say lookie at me, I'm a horse!
+}
