@@ -1,5 +1,0 @@
-say hi
-# this is a comment
-This is not commented # But this is!
-" this is in a string "
-" this is a #comment inside a string "
