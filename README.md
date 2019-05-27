@@ -13,12 +13,26 @@ Another great question! Minecraft commands are tedious to make - they involve a 
 - Operations (x = 5 + 2; y -= 10; z = x + y)
 - Control statements (IF/ELSE/ELSE IF, FUNCTIONS, FOR, WHILE)
 - Importing of external scripts
-- + more to come!
+- \+ more to come!
 
-At this point I'm not sure if all the above are even possible, but it's worth a try anyway!
+#### for example...
+```
+i = 12;
+if ( i > 2 ) {
+    execute as @e[type=minecraft:horse] run say lookie at me, I'm a horse!;
+    height = 1;
+    for (each player in @a) {
+        execute as player run teleport @p ~ ~height ~
+        tellraw player {"text":"hahaha, get pranked!"}
+        height += 1;
+    }
+    tellraw @a {"text":"hello world!"}
+}
+```
+At this point I'm not even fully convinced all the above is even possible, but it's worth a try anyway (and my sanity, apparently...)
 
 ### Installation
-wait wait wait - you actually want to use this? Sweet! all you have to do is <INSERT HOW TO USE IT HERE>. It's easy!
+wait wait wait - you actually want to use this? Sweet! all you have to do is \<INSERT HOW TO USE IT HERE\>. It's easy!
 
 ### Contribution
 and 10 other jokes fun jokes you can tell yourself!
