@@ -1,8 +1,15 @@
-file_name = "example.txt"
+file_name = "../testfiles/test_structure.txt"
+
+def toggle_var(var, states):
+    i = states.index(var) + 1
+    if i >= len(states):
+        i = 0
+    return states[i]
 
 file = open(file_name, "r")
 code = ""
-def interpret_line_for_comments(line):
+def interpret_line(line):
+    """get rid of comments (properly) and put the whole thing into one line in code"""
     global code
     mode = "code"
     i = 0
@@ -15,19 +22,32 @@ def interpret_line_for_comments(line):
             code += char
         else:
             if mode == "text":
-                code += char
+                if char != "\n":
+                    code += char
             else:
                 if char == "#":
-                    code += "\n" if i != 0 else ""
                     return
                 code += char
         i += 1
 
 for line in file:
-    interpret_line_for_comments(line)
-
-
-
+    interpret_line(line.strip())
 file.close()
 
-print(code)
+objects = []
+# Now I'll go through and find the seperate "objects" in the code
+mode = "code"
+cur_object = ""
+for char in code:
+    if char == "\"":
+        mode = toggle_var(mode, ["code", "text"])
+        continue
+    else:
+        if mode == "text":
+            cur_object += char
+        elif mode == "code":
+
+            if char != ";":
+                cur_object += char
+            else:
+                
