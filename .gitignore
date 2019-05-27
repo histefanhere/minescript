@@ -1,3 +1,8 @@
+code/.structure.py.swp
+project.sublime-project
+project.sublime-workspace
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -122,5 +127,3 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-
-code/.structure.py.swp
