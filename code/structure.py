@@ -6,3 +6,6 @@ class Object:
 
         # TODO: get the type. get_type() will also pretify cur_object and operation
         #self.type = get_type()
+        if self.children != "":
+            # object is an operation
+            pass
